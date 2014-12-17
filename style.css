@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+    background-color: #2d2d2d;
+    font-family: 'Lato';
+    color: white;
+    font-weight: 300;
+}
+
+h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 42px;
+}
+
+button {
+    background-color: #9061b2;
+    color: white;
+    border:0px;
+    box-shadow: 0px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:5px;
+    padding-bottom: 5px;
+
+}
+.navigation {
+    width: 200px;
+    text-transform: uppercase;
+    float: right;
+}
+
+.navigation ul {
+    background-color: #37383a;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navigation .header {
+    padding: 15px;
+    background-color: #4e5053;
+}
+
+.navigation li {
+    padding: 15px;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+}
+
+.navigation .selected {
+    background-color: #9061b2;
+}
+
+.score {
+    font-size: 36px;
+    margin: 15px;
+    color: #afb3b9;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.title a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cover {
+  margin-bottom:5px;
+}
+
+.line {
+    position: relative;
+    font-size: 16px;
+    margin: 2px;
+}
+
+/**
+ * Changed to a <b> because React wraps text nodes in
+ * <span> elements if they have non-text-node siblings.
+ */
+.line b {
+    color: #afb3b9;
+}
+
+.editor {
+  margin: 2px;
+  font-size: 16px;
+}
+
+.editor b {
+  color: #afb3b9;
+}
+
+.OPED {
+  margin:2px;
+  font-size: 16px;
+}
+
+.OPED b {
+  color: #afb3b9;
+}
+
+.episode {
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+.episode a {
+  color: white
+}
