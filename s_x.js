@@ -1,15 +1,31 @@
+/**Markdown to html converter */
+var converter = new Showdown.converter();
+
+
 /**! @jsx React.DOM */
 menuItems = [
   {name:'Home', title:'SX SUBS', link:"home"},
   {name:'Ongoing', title:'Ongoing', link:"ongoing"},
   {name:'Completed', title:'Completed', link:"completed"},
   {name:'Staff', title:'Staff', link:"staff"},
+  {name:'About', title:'About', link:"about"},
   {name:'Blog', title:'Blog', url:"/blog"}
 ];
 
 states = {
   Ongoing: [
-    {name:'Trinity Seven', episodes:[
+    {name:'Trinity Seven', 
+     type: 'TV',
+     data:{
+       score:1,
+       line1:'Translation by ',
+       line2:'Editing by ',
+       line3:'OP&ED by ',
+       line1b:'CR+SX',
+       line2b:'SX',
+       line3b: 'DDY',
+       img:'http://cdn.myanimelist.net/images/anime/12/67795.jpg',
+       episodes:[
       {ep:'01', url:'http://www.nyaa.se/?page=download&tid=607588'}, 
       {ep:'02', url:'http://www.nyaa.se/?page=download&tid=609598'},
       {ep:'03', url:'http://www.nyaa.se/?page=download&tid=612961'},
@@ -21,17 +37,9 @@ states = {
       {ep:'09', url:'http://www.nyaa.se/?page=download&tid=630161'},
       {ep:'10', url:'http://www.nyaa.se/?page=download&tid=632853'},
       {ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'}
-],
-     data:{
-       score:1,
-       line1:'Translation by ',
-       line2:'Editing by ',
-       line3:'OP&ED by ',
-       line1b:'CR+SX',
-       line2b:'SX',
-       line3b: 'DDY',
-       img:'http://cdn.myanimelist.net/images/anime/12/67795.jpg'},
-     
+       ]
+     },
+       
     },
   ],
     
@@ -49,6 +57,15 @@ states = {
     {
       name:'Coming Soon',
       data:{}
+    }
+  ],
+  
+  About: [
+    {
+      name:'Coming Soon',
+      data:{
+        text: '##Test  \n 1234'
+      }
     }
   ]
   
@@ -103,15 +120,18 @@ var StoryList = React.createClass({
   
     render: function() {
         var storyNodes = this.props.items.map(function(item) {
-          
-          
+          console.log(item);
           var storyDetails;
-          if (item.episodes !== undefined) {
-            storyDetails = item.episodes.map(function(ep) {
+          if (item.type === 'TV') {
+            storyDetails = item.data.episodes.map(function(ep) {
                 return (
                   <div className={item.name}><p className="episode" >EP {ep.ep}: <a href={ep.url}>Torrent</a> | No DDL</p></div>
                 );
               });
+          
+          
+          
+          
           }
           
           
@@ -147,7 +167,7 @@ var StoryList = React.createClass({
                         </p>
             
                         <p className="line">
-                          {item.episodes !== undefined ? <button className="ep_button" onClick={function() {$("[class='"+item.name+"']").slideToggle(0, function(){})}}>Episode List</button> : ""}
+                          {item.data.episodes !== undefined ? <button className="ep_button" onClick={function() {$("[class='"+item.name+"']").slideToggle(0)}}>Episode List</button> : ""}
                         </p>
                                               
                       </td>
