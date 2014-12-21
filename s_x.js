@@ -176,7 +176,11 @@ var StoryList = React.createClass({
         } else if (item.type === 'markdown') {
           var rawMarkup = converter.makeHtml(item.data.text);
           return (
-            <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
+            <tr>
+              <td>
+                <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
+              </td>
+            </tr>
           );
   
   
@@ -212,12 +216,42 @@ var StoryDetails = React.createClass({
 var App = React.createClass({
 
     getInitialState: function() {
-        return ({
-            activeNavigationUrl: "home",
+        if (window.location.hash === "#About") {
+          return ({
+            activeNavigationUrl: "about",
             navigationItems: menuItems,
-            storyItems: states["Home"],
-            title: "SX SUBS"
-        });
+            storyItems: states["About"],
+            title: "About"
+          });
+        } else if (window.location.hash === "#Ongoing") {
+          return ({
+            activeNavigationUrl: "ongoing",
+            navigationItems: menuItems,
+            storyItems: states["Ongoing"],
+            title: "Ongoing"
+          });
+        } else if (window.location.hash === "#Completed") {
+          return ({
+            activeNavigationUrl: "completed",
+            navigationItems: menuItems,
+            storyItems: states["Completed"],
+            title: "Completed",
+          });
+        } else if (window.location.hash === "#Staff") {
+          return ({
+            activeNavigationUrl: "staff",
+            navigationItems: menuItems,
+            storyItems: states["Staff"],
+            title: "Staff",
+          });
+        } else {
+          return ({
+              activeNavigationUrl: "home",
+              navigationItems: menuItems,
+              storyItems: states["Home"],
+              title: "SX SUBS"
+          });
+        }
     },
     render: function() {
         return (
@@ -232,9 +266,9 @@ var App = React.createClass({
     },
     setSelectedItem: function(item) {
         var _this = this;
-        //script.src = "http://www.reddit.com/" + item.data.url + ".json?sort=top&t=month&jsonp=" + cbname;
+        
         _this.setState({storyItems: states[item.name]});
-
+        window.location.hash = "#" + item.name;
         this.setState({
             activeNavigationUrl: item.link,
             title: item.title
