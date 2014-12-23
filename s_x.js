@@ -36,7 +36,8 @@ states = {
       {ep:'08', url:'http://www.nyaa.se/?page=download&tid=627469'}, 
       {ep:'09', url:'http://www.nyaa.se/?page=download&tid=630161'},
       {ep:'10', url:'http://www.nyaa.se/?page=download&tid=632853'},
-      {ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'}
+      {ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'},
+      {ep:'12', url:'http://www.nyaa.se/?page=download&tid=637883'}
        ]
      },
        
@@ -54,7 +55,7 @@ states = {
         stories: [
           {
             date:'12-21-14',
-            text:'##Happy Holidays\n  \n\n\nMost recent Trinity Seven episode: 11, [torrent](http://www.nyaa.se/?page=download&tid=635424)  \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
+            text:'##Happy Holidays\n  \n\n\nMost recent Trinity Seven episode: 12, [torrent](http://www.nyaa.se/?page=download&tid=637883)  \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
           },
           /*
           {
