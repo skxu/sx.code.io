@@ -101,7 +101,7 @@ states = {
       type:'markdown',
       name:'Coming Soon',
       data:{
-        text: 'Hm?  \n <img src="http://i.imgur.com/hzbuKUd.png" alt="Drawing" style="width: 50%;"/>'
+        text: 'Hm?  \n <img src="http://i.imgur.com/K9YJnLl.png" alt="Drawing" style="width: 50%;"/>'
       }
     }
   ],
