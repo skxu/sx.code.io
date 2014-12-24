@@ -18,7 +18,8 @@ states = {
        name:'Saenai Heroine no Sodatekata', 
        type: 'TV',
        data:{
-         score:2,
+         score:2, //unique ID #
+         rank:1, //used for displaying
          line1:'Translation by ',
          line2:'Editing by ',
          line3:'OP&ED by ',
@@ -35,7 +36,8 @@ states = {
       name:'Koufuku Graffiti',
       type: 'TV',
       data:{
-        score:3,
+        score:3, //unique ID #
+        rank:2, //used for displaying
         line1:'Translation by ',
         line2:'Editing by ',
         line3:'OP&ED by ',
@@ -55,6 +57,7 @@ states = {
      type: 'TV',
      data:{
        score:1,
+       rank:1,
        line1:'Translation by ',
        line2:'Editing by ',
        line3:'OP&ED by ',
@@ -184,7 +187,7 @@ var StoryList = React.createClass({
             return (
                 <tr key={item.data.score}>
                     <td>
-                        <p className="score">{item.data.score}</p>
+                        <p className="score">{item.data.rank}</p>
                     </td>
                     <td>
                         <p className="title">
