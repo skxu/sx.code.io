@@ -14,6 +14,43 @@ menuItems = [
 
 states = {
   Ongoing: [
+    {
+       name:'Saenai Heroine no Sodatekata', 
+       type: 'TV',
+       data:{
+         score:2,
+         line1:'Translation by ',
+         line2:'Editing by ',
+         line3:'OP&ED by ',
+         line1b:'CR+SX',
+         line2b:'SX',
+         line3b: 'TBA',
+         img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
+         episodes:[
+         ]
+       },
+    },
+    
+    {
+      name:'Koufuku Graffiti',
+      type: 'TV',
+      data:{
+        score:3,
+        line1:'Translation by ',
+        line2:'Editing by ',
+        line3:'OP&ED by ',
+        line1b:'TBA',
+        line2b:'SX',
+        line3b:'TBA',
+        img:'http://cdn.myanimelist.net/images/anime/6/64615.jpg',
+        episodes:[
+        ]
+      },
+    },
+    
+  ],
+    
+  Completed: [
     {name:'Trinity Seven', 
      type: 'TV',
      data:{
@@ -42,9 +79,6 @@ states = {
      },
        
     },
-  ],
-    
-  Completed: [
   ],
   
   Home: [
@@ -179,7 +213,8 @@ var StoryList = React.createClass({
                           {item.data.episodes !== undefined ? <button className="ep_button" onClick={function() {$("[class='"+item.name+"']").slideToggle(0)}}>Episode List</button> : ""
         }
                         </p>
-                                              
+                        <br></br>
+                        <br></br>
                     </td>
                     <td>
                         <p>
@@ -188,16 +223,19 @@ var StoryList = React.createClass({
               
                     </td>
                 </tr>
+                
             );
         
         } else if (item.type === 'markdown') {
           var rawMarkup = converter.makeHtml(item.data.text);
           return (
+            <div>
             <tr>
               <td>
                 <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
               </td>
             </tr>
+            </div>
           );
   
   

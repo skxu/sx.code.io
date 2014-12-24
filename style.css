@@ -71,6 +71,8 @@ button {
     font-size: 36px;
     margin: 15px;
     color: #afb3b9;
+    position: relative;
+    bottom: 50px;
 }
 
 .title {
@@ -128,4 +130,10 @@ button {
 
 .episode a {
   color: white
+}
+
+
+/* Hiding scrollbar because ugly */
+::-webkit-scrollbar { 
+    display: none; 
 }
