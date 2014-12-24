@@ -86,21 +86,13 @@ states = {
   
   Home: [
     {
-      type:'news',
+      type:'markdown',
       name:'Welcome',
       data:{
-        stories: [
-          {
-            date:'12-21-14',
-            text:'##Happy Holidays\n  \n\n\nMost recent Trinity Seven episode: 12, [torrent](http://www.nyaa.se/?page=download&tid=637883)  \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
+        date:'12-21-14',
+        text:'##Happy Holidays\n  \n\n\nMost recent Trinity Seven episode: 12, [torrent](http://www.nyaa.se/?page=download&tid=637883)  \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
           },
-          /*
-          {
-            date:'12-20-14',
-            text:'##Site Updates  \n About, Staff, & Homepage have are updated!'
-          }*/
-        ]
-      }
+      
     }
   ],
   
