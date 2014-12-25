@@ -129,7 +129,6 @@ states = {
 
 var ReleaseListItem = React.createClass({
   render: function() {
-    console.log(this.props);
     return (
       <div>
       {this.props.hidden ? null : <li>{this.props.release.name} - <a href={this.props.release.url}>720p</a></li>
@@ -220,7 +219,7 @@ var ReleaseList = React.createClass({
   showButton: function() {
     return (
       <div>
-        <button className="showAll" onClick={this.onClick}>Show All</button>
+        <button className="showAll" onClick={this.onClick}>{this.state.hide ? "Show All" : "Show Less"}</button>
       </div>
     )
   },
@@ -268,11 +267,10 @@ var Navigation = React.createClass({
              In the future, all data should be loaded
            */
           $.getJSON("releases.json", function(releaseList) {
-            //states['Search'] = releaseList;
             releases = releaseList[0].releases;
-            console.log(_this);
             _this.forceUpdate();
             $('.releaseList li:gt(3)').hide();
+            $('.searchBox').fancyInput();
             
           });
         }
