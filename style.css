@@ -35,6 +35,14 @@ button {
 
 }
 
+button:focus {
+  outline: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .showAll {
   background-color: #4e5053;
   position: relative;
@@ -58,6 +66,7 @@ button {
 .searchBox.focus {
   border: solid 1px #707070;
   box-shadow: 0 0 5px 1px #969696;
+  outline-color: #6c6c6c;
 }
 
 .releases {
