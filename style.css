@@ -35,6 +35,12 @@ button {
 
 }
 
+.showAll {
+  background-color: #4e5053;
+  position: relative;
+  width: 100%;
+}
+
 .searchBox {
   position: relative;
   width:100%;
@@ -58,6 +64,25 @@ button {
   margin-top: 15px;
 }
 
+.releaseName {
+  cursor:default;
+}
+
+.download_720p {
+  padding-left: 2px;
+  padding-right: 2px;
+  background: #4e5053;
+  border: solid 1px #37383a;
+  text-transform: lowercase;
+}
+
+.download_720p:hover,
+.download_720p.hover {
+  border:solid 1px #9061b2;
+
+  transition: box-shadow 0.3s, border 0.3s;
+}
+  
 .navigation {
     width: 200px;
     text-transform: uppercase;
@@ -75,6 +100,10 @@ button {
 
 .navigation .header {
     padding: 15px;
+    background-color: #4e5053;
+}
+
+.releases {
     background-color: #4e5053;
 }
 

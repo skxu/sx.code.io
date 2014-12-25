@@ -131,7 +131,7 @@ var ReleaseListItem = React.createClass({
   render: function() {
     return (
       <div>
-      {this.props.hidden ? null : <li>{this.props.release.name} - <a href={this.props.release.url}>720p</a></li>
+      {this.props.hidden ? null : <li className="releaseName">{this.props.release.name} - <a className="download_720p" href={this.props.release.url}>720p</a></li>
       }
       </div>
     )
@@ -199,9 +199,9 @@ var ReleaseList = React.createClass({
   
   header: function() {
     return (
-      <div className="releases">
+      <div>
       <ul>
-        <li>Recent releases</li>
+        <li className="releases">Recent releases</li>
       </ul>
       </div>
     );
