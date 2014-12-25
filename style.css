@@ -34,6 +34,15 @@ button {
     padding-bottom: 5px;
 
 }
+
+.searchBox {
+
+}
+
+.releases {
+  margin-top: 15px;
+}
+
 .navigation {
     width: 200px;
     text-transform: uppercase;

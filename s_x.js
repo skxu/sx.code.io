@@ -1,6 +1,9 @@
+
+
 /**Markdown to html converter */
 var converter = new Showdown.converter();
 
+var releases = [];
 
 /**! @jsx React.DOM */
 menuItems = [
@@ -13,11 +16,13 @@ menuItems = [
 ];
 
 states = {
+  
   Ongoing: [
     {
-       name:'Saenai Heroine no Sodatekata', 
-       type: 'TV',
-       data:{
+      name:'Saenai Heroine no Sodatekata', 
+      type: 'TV',
+      status: 'ongoing',
+      data:{
          score:2, //unique ID #
          rank:1, //used for displaying
          line1:'Translation by ',
@@ -35,6 +40,7 @@ states = {
     {
       name:'Koufuku Graffiti',
       type: 'TV',
+      status: 'ongoing',
       data:{
         score:3, //unique ID #
         rank:2, //used for displaying
@@ -55,6 +61,7 @@ states = {
   Completed: [
     {name:'Trinity Seven', 
      type: 'TV',
+     status: 'completed',
      data:{
        score:1,
        rank:1,
@@ -120,6 +127,110 @@ states = {
 };
 
 
+var ReleaseListItem = React.createClass({
+  render: function() {
+    console.log(this.props);
+    return (
+      <div>
+      {this.props.hidden ? null : <li>{this.props.release.name} - <a href={this.props.release.url}>720p</a></li>
+      }
+      </div>
+    )
+  }
+});
+
+var ReleaseList = React.createClass({
+  getInitialState: function() {
+    return {
+      search: '',
+      hide: true,
+    };
+  },
+  
+  setSearch: function(event) {
+    return this.setState({
+      search: event.target.value,
+      hide: this.state.hide
+    });
+  },
+  
+  releases: function() {
+    return this.props.releases.filter((function(_this) {
+      return function(release) {
+        name1 = release.name.toLowerCase();
+        name2 = release.alt.toLowerCase();
+        return ((name1.indexOf(_this.state.search.toLowerCase()) > -1) || (name2.indexOf(_this.state.search.toLowerCase()) > -1));
+      };
+    })(this));
+  },
+  
+  searchInput: function() {
+    return React.DOM.input({
+      name: 'search',
+      className: 'searchBox',
+      onChange: this.setSearch,
+      placeholder: 'e.g. Trinity Seven 7'
+    });
+  },
+  
+  releaseList: function() {
+    var release;
+    return React.DOM.ul({}, [
+      (function() {
+        var _i, _len, _ref, _results;
+        _ref = this.releases();
+        _results = [];
+        for (_i = _ref.length; _i >= 0; _i--) {
+          release = _ref[_i];
+          if (release === undefined) continue;
+          _results.push(ReleaseListItem({
+            release: release,
+            hidden: _results.length >= 3 && this.state.hide
+          }));
+        }
+        if (_results.length > 3) {
+          $('.showAll').show();
+        } else {
+          $('.showAll').hide();
+        }
+        return _results;
+      }).call(this)
+    ]);
+  },
+  
+  header: function() {
+    return (
+      <div className="releases">
+      <ul>
+        <li>Recent releases</li>
+      </ul>
+      </div>
+    );
+  },
+
+  
+  onClick: function() {
+    set = this.state.hide ? false : true;
+    this.setState({
+      search: this.state.search,
+      hide:set});
+    this.forceUpdate();
+  },
+  
+  showButton: function() {
+    return (
+      <div>
+        <button className="showAll" onClick={this.onClick}>Show All</button>
+      </div>
+    )
+  },
+  
+  render: function() {
+    return React.DOM.div({}, this.header(), this.searchInput(), this.releaseList(), this.showButton());
+  }
+});
+
+
 var NavigationItem = React.createClass({
     onClick: function() {
         this.props.itemSelected(this.props.item);
@@ -151,6 +262,20 @@ var Navigation = React.createClass({
               />
             );
         });
+      
+        if (releases.length === 0) {
+          /**Load release list
+             In the future, all data should be loaded
+           */
+          $.getJSON("releases.json", function(releaseList) {
+            //states['Search'] = releaseList;
+            releases = releaseList[0].releases;
+            console.log(_this);
+            _this.forceUpdate();
+            $('.releaseList li:gt(3)').hide();
+            
+          });
+        }
 
         return (
             <div className="navigation">
@@ -158,7 +283,15 @@ var Navigation = React.createClass({
                 <ul>
                     {items}
                 </ul>
+                <div className="search">
+                  <ul className="releaseList">
+                    <ReleaseList releases={releases}/>
+                  </ul>
+                </div>
+                
             </div>
+            
+
         );
     }
 });
@@ -261,20 +394,22 @@ var StoryList = React.createClass({
       
 
         return (
+            
             <table>
                 <tbody>
                     {storyNodes}
                 </tbody>
             </table>
+            
         );
     }
 });
 
 
+
+
 var StoryDetails = React.createClass({
-  render: function() {
-    
-    
+  render: function() {    
     
     return (
       <div className="header">{this.props.item.name}</div>
@@ -319,6 +454,7 @@ var App = React.createClass({
               activeNavigationUrl: "home",
               navigationItems: menuItems,
               storyItems: states["Home"],
+              releases: [],
               title: "SX SUBS"
           });
         }
@@ -330,7 +466,9 @@ var App = React.createClass({
                 <Navigation activeUrl={this.state.activeNavigationUrl}
                     items={this.state.navigationItems}
                     itemSelected={this.setSelectedItem} />
+                
                 <StoryList items={this.state.storyItems} />
+          
             </div>
         );
     },
