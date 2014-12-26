@@ -32,6 +32,9 @@ states = {
          line2b:'SX',
          line3b: 'TBA',
          img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
+         hbird:'https://hummingbird.me/anime/saenai-heroine-no-sodate-kata',
+         mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
+         anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
          ]
        },
@@ -50,6 +53,9 @@ states = {
         line1b:'TBA',
         line2b:'SX',
         line3b:'TBA',
+        mal:'http://myanimelist.net/anime/24629/Koufuku_Graffiti',
+        hbird:'https://hummingbird.me/anime/koufuku-graffiti',
+        anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10684',
         img:'http://cdn.myanimelist.net/images/anime/6/64615.jpg',
         episodes:[
         ]
@@ -72,6 +78,9 @@ states = {
        line2b:'SX',
        line3b: 'DDY',
        img:'http://cdn.myanimelist.net/images/anime/12/67795.jpg',
+       mal:'http://myanimelist.net/anime/25157/Trinity_Seven',
+       hbird:'https://hummingbird.me/anime/trinity-seven',
+       anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10441',
        episodes:[
       {ep:'01', url:'http://www.nyaa.se/?page=download&tid=607588'}, 
       {ep:'02', url:'http://www.nyaa.se/?page=download&tid=609598'},
@@ -317,6 +326,9 @@ var StoryList = React.createClass({
                             <a href={item.data.url}>
                                 {item.name}
                             </a>
+                            <a href={item.data.mal}><img className="icon" title="MyAnimeList" src="http://i.imgur.com/cHU6p56.jpg"></img></a>
+                            <a href={item.data.hbird}><img className="icon" title="Hummingbird.me" src="https://hummingbird.me/assets/h-logo-d5cecd961cfcf1feb9974e0affdf7268.png"></img></a>
+                            <a href={item.data.anidb}><img className="icon" title="aniDB" src="http://i.imgur.com/Z0C5NSK.png"></img></a>
                         </p>
               
                         <p className="cover">
@@ -336,8 +348,7 @@ var StoryList = React.createClass({
                         </p>
             
                         <p className="line">
-                          {item.data.episodes !== undefined ? <button className="ep_button" onClick={function() {$("[class='"+item.name+"']").slideToggle(0)}}>Episode List</button> : ""
-        }
+                          <button className="ep_button" onClick={function() {$("[class='"+item.name+"']").slideToggle(0)}}>Episode List</button>
                         </p>
                         <br></br>
                         <br></br>
