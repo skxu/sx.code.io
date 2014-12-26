@@ -106,7 +106,7 @@ states = {
       name:'Welcome',
       data:{
         date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nMost recent Trinity Seven episode: 12, [torrent](http://www.nyaa.se/?page=download&tid=637883)  \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
+        text:'##Happy Holidays\n  \n\n\nWinter 2015! ٩(･ิᴗ･ิ๑)۶ \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
           },
       
     }
@@ -326,13 +326,16 @@ var StoryList = React.createClass({
                             <a href={item.data.url}>
                                 {item.name}
                             </a>
-                            <a href={item.data.mal}><img className="icon" title="MyAnimeList" src="http://i.imgur.com/cHU6p56.jpg"></img></a>
-                            <a href={item.data.hbird}><img className="icon" title="Hummingbird.me" src="https://hummingbird.me/assets/h-logo-d5cecd961cfcf1feb9974e0affdf7268.png"></img></a>
-                            <a href={item.data.anidb}><img className="icon" title="aniDB" src="http://i.imgur.com/Z0C5NSK.png"></img></a>
                         </p>
               
                         <p className="cover">
                             <img src={item.data.img}/>
+                        </p>
+                        
+                        <p className="links">
+                            <a href={item.data.mal}>MyAnimeList</a>&nbsp;|&nbsp;
+                            <a href={item.data.hbird}>Hummingbird</a>&nbsp;|&nbsp;
+                            <a href={item.data.anidb}>AniDB</a>
                         </p>
               
                         <p className="line">
