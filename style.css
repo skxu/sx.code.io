@@ -49,6 +49,11 @@ button:hover {
   width: 100%;
 }
 
+.showAll:hover {
+  background-color: rgb(37, 37, 39);
+  transition: background-color 0.3s;
+}
+
 .searchBox {
   position: relative;
   width:100%;

@@ -168,7 +168,7 @@ var ReleaseList = React.createClass({
       name: 'search',
       className: 'searchBox',
       onChange: this.setSearch,
-      placeholder: 'e.g. Trinity Seven 7'
+      placeholder: 'Search (e.g. Trinity Seven 7)'
     });
   },
   
