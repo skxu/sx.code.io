@@ -1,4 +1,4 @@
- //<img className="smallBanner" src="http://a.pomf.se/tfitda.png"></img>
+// santa mio - http://cdn.awwni.me/mv27.jpg
 
 /**Markdown to html converter */
 var converter = new Showdown.converter();
@@ -113,7 +113,7 @@ states = {
       name:'Welcome',
       data:{
         date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015! ٩(･ิᴗ･ิ๑)۶ \n\n<img src="http://cdn.awwni.me/mv27.jpg" alt="Drawing" style="width: 35%;"/>'
+        text:'##Happy Holidays\n  \n\n\nWinter 2015! ٩(･ิᴗ･ิ๑)۶ \n\n'
           },
       
     }
