@@ -9,7 +9,7 @@ var banners = [
   {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
   {large:'http://i.imgur.com/3FfalZ3.png', small:'http://i.imgur.com/cYFbqE5.png'},
   {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'},
-  {large:'http://i.imgur.com/YSxCb9m.png', small:'http://i.imgur.com/7cGw4Cw.png'}
+  {large:'http://i.imgur.com/IbSQfx3.png', small:'http://i.imgur.com/bDR4fuy.png'}
   
 ];
 
