@@ -6,8 +6,8 @@ var converter = new Showdown.converter();
 var releases = [];
 
 var banners = [
-  {large:'http://i.imgur.com/KMdCuLz.png', small: 'http://i.imgur.com/NzHFDVJ.png'},
-  {large:'http://a.pomf.se/ocjyen.png', small:'http://a.pomf.se/izsqxg.png'},
+  {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
+  {large:'http://i.imgur.com/3FfalZ3.png', small:'http://i.imgur.com/cYFbqE5.png'},
   {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'}
   
 ];
@@ -484,7 +484,7 @@ var App = React.createClass({
         var banner = banners[Math.floor(Math.random()*banners.length)];
         return (
             <div>
-                <img className="largeBanner" src={banner.large}></img>
+                <img className="largeBanner" src={banner.large} onload="this.style.display='block'"></img>
                 <img className="smallBanner" src={banner.small}></img>
                 <Navigation activeUrl={this.state.activeNavigationUrl}
                     items={this.state.navigationItems}
