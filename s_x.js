@@ -9,7 +9,10 @@ var banners = [
   {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
   {large:'http://i.imgur.com/3FfalZ3.png', small:'http://i.imgur.com/cYFbqE5.png'},
   {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'},
-  {large:'http://i.imgur.com/IbSQfx3.png', small:'http://i.imgur.com/bDR4fuy.png'}
+  {large:'http://i.imgur.com/IbSQfx3.png', small:'http://i.imgur.com/bDR4fuy.png'},
+  {large:'http://i.imgur.com/49ZWpmD.png', small:'http://i.imgur.com/YxfSK5H.png'},
+  {large:'http://i.imgur.com/SWYoB87.jpg', small:'http://i.imgur.com/ukPrEIJ.png'},
+  {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'}
   
 ];
 
@@ -114,7 +117,7 @@ states = {
       name:'Welcome',
       data:{
         date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015! ٩(･ิᴗ･ิ๑)۶ \n\n'
+        text:'##Happy Holidays\n  \n\n\nWinter 2015 ٩(･ิᴗ･ิ๑)۶ \n\nBanners have arrived!'
           },
       
     }
