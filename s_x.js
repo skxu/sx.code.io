@@ -1,4 +1,4 @@
-
+ //<img className="smallBanner" src="http://a.pomf.se/tfitda.png"></img>
 
 /**Markdown to html converter */
 var converter = new Showdown.converter();
@@ -476,11 +476,12 @@ var App = React.createClass({
     render: function() {
         return (
             <div>
-                <h1>{this.state.title}</h1>
+                <img className="largeBanner" src="http://a.pomf.se/ocjyen.png"></img>
+                <img className="smallBanner" src="http://a.pomf.se/izsqxg.png"></img>
                 <Navigation activeUrl={this.state.activeNavigationUrl}
                     items={this.state.navigationItems}
                     itemSelected={this.setSelectedItem} />
-                
+                <h1>{this.state.title}</h1>
                 <StoryList items={this.state.storyItems} />
           
             </div>
