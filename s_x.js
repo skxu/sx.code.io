@@ -246,11 +246,13 @@ var NavigationItem = React.createClass({
     render: function() {
         return (
             <a href={this.props.item.url}>
-              <li onClick={this.onClick} className={this.props.selected ? "selected" : ""}>
-                
+              <div className="main">
+                <li onClick={this.onClick} className={this.props.selected ? "selected" : ""}>
+              
                   {this.props.item.name}
             
-              </li>
+                </li>
+              </div>
             </a>
         );
     }
