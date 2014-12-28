@@ -1,4 +1,4 @@
-// santa mio - http://cdn.awwni.me/mv27.jpg
+// santa mio - //cdn.awwni.me/mv27.jpg
 
 /**Markdown to html converter */
 var converter = new Showdown.converter();
@@ -6,13 +6,13 @@ var converter = new Showdown.converter();
 var releases = [];
 
 var banners = [
-  {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
-  {large:'http://i.imgur.com/3FfalZ3.png', small:'http://i.imgur.com/cYFbqE5.png'},
-  {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'},
-  {large:'http://i.imgur.com/IbSQfx3.png', small:'http://i.imgur.com/bDR4fuy.png'},
-  {large:'http://i.imgur.com/49ZWpmD.png', small:'http://i.imgur.com/YxfSK5H.png'},
-  {large:'http://i.imgur.com/SWYoB87.jpg', small:'http://i.imgur.com/ukPrEIJ.png'},
-  {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'}
+  {large:'//i.imgur.com/KMdCuLz.png', small:'//i.imgur.com/NzHFDVJ.png'},
+  {large:'//i.imgur.com/3FfalZ3.png', small:'//i.imgur.com/cYFbqE5.png'},
+  {large:'//i.imgur.com/XF8UYAF.png', small:'//i.imgur.com/WTWcHW7.png'},
+  {large:'//i.imgur.com/IbSQfx3.png', small:'//i.imgur.com/bDR4fuy.png'},
+  {large:'//i.imgur.com/49ZWpmD.png', small:'//i.imgur.com/YxfSK5H.png'},
+  {large:'//i.imgur.com/SWYoB87.jpg', small:'//i.imgur.com/ukPrEIJ.png'},
+  {large:'//i.imgur.com/HcKCzZM.png', small:'//i.imgur.com/iu83kR0.png'}
   
 ];
 
@@ -42,10 +42,10 @@ states = {
          line1b:'CR+SX',
          line2b:'SX',
          line3b: 'TBA',
-         img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
-         hbird:'https://hummingbird.me/anime/saenai-heroine-no-sodate-kata',
-         mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
-         anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
+         img:'//cdn.myanimelist.net/images/anime/7/68783.jpg',
+         hbird:'//hummingbird.me/anime/saenai-heroine-no-sodate-kata',
+         mal:'//myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
+         anidb:'//anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
          ]
        },
@@ -64,10 +64,10 @@ states = {
         line1b:'TBA',
         line2b:'SX',
         line3b:'TBA',
-        mal:'http://myanimelist.net/anime/24629/Koufuku_Graffiti',
-        hbird:'https://hummingbird.me/anime/koufuku-graffiti',
-        anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10684',
-        img:'http://cdn.myanimelist.net/images/anime/6/64615.jpg',
+        mal:'//myanimelist.net/anime/24629/Koufuku_Graffiti',
+        hbird:'//hummingbird.me/anime/koufuku-graffiti',
+        anidb:'//anidb.net/perl-bin/animedb.pl?show=anime&aid=10684',
+        img:'//cdn.myanimelist.net/images/anime/6/64615.jpg',
         episodes:[
         ]
       },
@@ -88,23 +88,23 @@ states = {
        line1b:'CR+SX',
        line2b:'SX',
        line3b: 'DDY',
-       img:'http://cdn.myanimelist.net/images/anime/12/67795.jpg',
-       mal:'http://myanimelist.net/anime/25157/Trinity_Seven',
-       hbird:'https://hummingbird.me/anime/trinity-seven',
-       anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10441',
+       img:'//cdn.myanimelist.net/images/anime/12/67795.jpg',
+       mal:'//myanimelist.net/anime/25157/Trinity_Seven',
+       hbird:'//hummingbird.me/anime/trinity-seven',
+       anidb:'//anidb.net/perl-bin/animedb.pl?show=anime&aid=10441',
        episodes:[
-      {ep:'01', url:'http://www.nyaa.se/?page=download&tid=607588'}, 
-      {ep:'02', url:'http://www.nyaa.se/?page=download&tid=609598'},
-      {ep:'03', url:'http://www.nyaa.se/?page=download&tid=612961'},
-      {ep:'04', url:'http://www.nyaa.se/?page=download&tid=622443'},
-      {ep:'05', url:'http://www.nyaa.se/?page=download&tid=622441'},
-      {ep:'06', url:'http://www.nyaa.se/?page=download&tid=622437'},
-      {ep:'07', url:'http://www.nyaa.se/?page=download&tid=625875'},
-      {ep:'08', url:'http://www.nyaa.se/?page=download&tid=627469'}, 
-      {ep:'09', url:'http://www.nyaa.se/?page=download&tid=630161'},
-      {ep:'10', url:'http://www.nyaa.se/?page=download&tid=632853'},
-      {ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'},
-      {ep:'12', url:'http://www.nyaa.se/?page=download&tid=637883'}
+      {ep:'01', url:'//www.nyaa.se/?page=download&tid=607588'}, 
+      {ep:'02', url:'//www.nyaa.se/?page=download&tid=609598'},
+      {ep:'03', url:'//www.nyaa.se/?page=download&tid=612961'},
+      {ep:'04', url:'//www.nyaa.se/?page=download&tid=622443'},
+      {ep:'05', url:'//www.nyaa.se/?page=download&tid=622441'},
+      {ep:'06', url:'//www.nyaa.se/?page=download&tid=622437'},
+      {ep:'07', url:'//www.nyaa.se/?page=download&tid=625875'},
+      {ep:'08', url:'//www.nyaa.se/?page=download&tid=627469'}, 
+      {ep:'09', url:'//www.nyaa.se/?page=download&tid=630161'},
+      {ep:'10', url:'//www.nyaa.se/?page=download&tid=632853'},
+      {ep:'11', url:'//www.nyaa.se/?page=download&tid=635424'},
+      {ep:'12', url:'//www.nyaa.se/?page=download&tid=637883'}
        ]
      },
        
@@ -128,7 +128,7 @@ states = {
       type:'markdown',
       name:'Coming Soon',
       data:{
-        text: 'Hm?  \n <img src="http://i.imgur.com/K9YJnLl.png" alt="Drawing" style="width: 50%;"/>'
+        text: 'Hm?  \n <img src="//i.imgur.com/K9YJnLl.png" alt="Drawing" style="width: 50%;"/>'
       }
     }
   ],
@@ -138,7 +138,7 @@ states = {
       type:'markdown',
       name:'Coming Soon',
       data:{
-        text: '##S\\_X\nS\\_X is a pseudo-fansub group. Our goals:  \n\n* Provide a \'watchable\' show in reasonable time\n* Release within 4 hours of airing \n* Fix wrong translations \n* Edit awkward phrases & grammar \n* Reduce as many 2-liners into 1-liners as possible\n  * May involve re-timing / typesetting \n* Include OP&ED from other groups, if available\n* Chapter the releases  \n\nS\\_X releases are meant to be fast & watched during the airing season, not high quality archive material.  \n<br></br>\n##Q\\_X \nQ\\_X is a subdivision which doesn\'t actually exist yet. While S\\_X provides speed, Q\\_X has the goal of providing better quality:  \n\n* Releases are expected within 48 hours \n* Typesetting where appropriate - e.g. signs \n* More editing with QC \n* Better encoding  \n\n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  \n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  \n\n***Why is your website so shitty?***  \nSomeone had the wonderful idea of building it from scratch.  \n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
+        text: '##S\\_X\nS\\_X is a pseudo-fansub group. Our goals:  \n\n* Provide a \'watchable\' show in reasonable time\n* Release within 4 hours of airing \n* Fix wrong translations \n* Edit awkward phrases & grammar \n* Reduce as many 2-liners into 1-liners as possible\n  * May involve re-timing / typesetting \n* Include OP&ED from other groups, if available\n* Chapter the releases  \n\nS\\_X releases are meant to be fast & watched during the airing season, not high quality archive material.  \n<br></br>\n##Q\\_X \nQ\\_X is a subdivision which doesn\'t actually exist yet. While S\\_X provides speed, Q\\_X has the goal of providing better quality:  \n\n* Releases are expected within 48 hours \n* Typesetting where appropriate - e.g. signs \n* More editing with QC \n* Better encoding  \n\n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](//github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  \n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  \n\n***Why is your website so shitty?***  \nSomeone had the wonderful idea of building it from scratch.  \n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
       }
     }
   ]
