@@ -8,7 +8,8 @@ var releases = [];
 var banners = [
   {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
   {large:'http://i.imgur.com/3FfalZ3.png', small:'http://i.imgur.com/cYFbqE5.png'},
-  {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'}
+  {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'},
+  {large:'http://i.imgur.com/pLnNsr5.png', small:'http://i.imgur.com/Nq0QXtK.png'}
   
 ];
 
