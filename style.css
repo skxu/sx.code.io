@@ -116,7 +116,11 @@ button:hover {
 
 .navigation .main li:hover {
   background-color: #9061b2;
-  transition: background-color 0.3s;
+  transition: background-color 0.4s;
+}
+
+.navigation .main li {
+  transition: background-color 0.2s;
 }
 
 .navigation .header {
