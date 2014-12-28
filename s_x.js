@@ -5,9 +5,16 @@ var converter = new Showdown.converter();
 
 var releases = [];
 
+var banners = [
+  {large:'http://i.imgur.com/KMdCuLz.png', small: 'http://i.imgur.com/NzHFDVJ.png'},
+  {large:'http://a.pomf.se/ocjyen.png', small:'http://a.pomf.se/izsqxg.png'},
+  {large:'http://i.imgur.com/XF8UYAF.png', small:'http://i.imgur.com/WTWcHW7.png'}
+  
+];
+
 /**! @jsx React.DOM */
 menuItems = [
-  {name:'Home', title:'SX SUBS', link:"home"},
+  {name:'Home', title:'Home', link:"home"},
   {name:'Ongoing', title:'Ongoing', link:"ongoing"},
   {name:'Completed', title:'Completed', link:"completed"},
   {name:'Staff', title:'Staff', link:"staff"},
@@ -469,15 +476,16 @@ var App = React.createClass({
               navigationItems: menuItems,
               storyItems: states["Home"],
               releases: [],
-              title: "SX SUBS"
+              title: "Home"
           });
         }
     },
     render: function() {
+        var banner = banners[Math.floor(Math.random()*banners.length)];
         return (
             <div>
-                <img className="largeBanner" src="http://a.pomf.se/ocjyen.png"></img>
-                <img className="smallBanner" src="http://a.pomf.se/izsqxg.png"></img>
+                <img className="largeBanner" src={banner.large}></img>
+                <img className="smallBanner" src={banner.small}></img>
                 <Navigation activeUrl={this.state.activeNavigationUrl}
                     items={this.state.navigationItems}
                     itemSelected={this.setSelectedItem} />
