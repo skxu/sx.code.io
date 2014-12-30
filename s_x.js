@@ -292,8 +292,6 @@ var Navigation = React.createClass({
             releases = releaseList[0].releases;
             _this.forceUpdate();
             $('.releaseList li:gt(3)').hide();
-            $('.searchBox').fancyInput();
-            
           });
         }
 
