@@ -97,12 +97,15 @@ button:hover {
   cursor:default;
 }
 
+.normalCase{
+  text-transform:capitalize;
+}
+
 .download_720p {
   padding-left: 2px;
   padding-right: 2px;
   background: #4e5053;
   border: solid 1px #37383a;
-  text-transform: lowercase;
 }
 
 .download_720p:hover,

@@ -93,18 +93,18 @@ states = {
        hbird:'https://hummingbird.me/anime/trinity-seven',
        anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10441',
        episodes:[
-      {ep:'01', url:'http://www.nyaa.se/?page=download&tid=607588'}, 
-      {ep:'02', url:'http://www.nyaa.se/?page=download&tid=609598'},
-      {ep:'03', url:'http://www.nyaa.se/?page=download&tid=612961'},
-      {ep:'04', url:'http://www.nyaa.se/?page=download&tid=622443'},
-      {ep:'05', url:'http://www.nyaa.se/?page=download&tid=622441'},
-      {ep:'06', url:'http://www.nyaa.se/?page=download&tid=622437'},
-      {ep:'07', url:'http://www.nyaa.se/?page=download&tid=625875'},
-      {ep:'08', url:'http://www.nyaa.se/?page=download&tid=627469'}, 
-      {ep:'09', url:'http://www.nyaa.se/?page=download&tid=630161'},
-      {ep:'10', url:'http://www.nyaa.se/?page=download&tid=632853'},
-      {ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'},
-      {ep:'12', url:'http://www.nyaa.se/?page=download&tid=637883'}
+      {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=607588'}, 
+      {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=609598'},
+      {v:'',   ep:'03', url:'http://www.nyaa.se/?page=download&tid=612961'},
+      {v:'v2', ep:'04', url:'http://www.nyaa.se/?page=download&tid=622443'},
+      {v:'v2', ep:'05', url:'http://www.nyaa.se/?page=download&tid=622441'},
+      {v:'v2', ep:'06', url:'http://www.nyaa.se/?page=download&tid=622437'},
+      {v:'v2', ep:'07', url:'http://www.nyaa.se/?page=download&tid=625875'},
+      {v:'',   ep:'08', url:'http://www.nyaa.se/?page=download&tid=627469'}, 
+      {v:'',   ep:'09', url:'http://www.nyaa.se/?page=download&tid=630161'},
+      {v:'',   ep:'10', url:'http://www.nyaa.se/?page=download&tid=632853'},
+      {v:'',   ep:'11', url:'http://www.nyaa.se/?page=download&tid=635424'},
+      {v:'',   ep:'12', url:'http://www.nyaa.se/?page=download&tid=637883'}
        ]
      },
        
@@ -117,7 +117,7 @@ states = {
       name:'Welcome',
       data:{
         date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015 ٩(･ิᴗ･ิ๑)۶ \n\nBanners have arrived!'
+        text:'##Happy Holidays\n  \n\n\nWinter 2015 ٩(･ิᴗ･ิ๑)۶ \n\n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
           },
       
     }
@@ -151,7 +151,7 @@ var ReleaseListItem = React.createClass({
   render: function() {
     return (
       <div>
-      {this.props.hidden ? null : <li className="releaseName">{this.props.release.name} - <a className="download_720p" href={this.props.release.url}>720p</a></li>
+      {this.props.hidden ? null : <li className="releaseName">{this.props.release.name}<div className="normalCase">720p - <a className="download_720p" href={this.props.release.url}>Torrent</a><a target="_blank" className="download_720p" href={this.props.release.ddl}>DDL</a></div></li>
       }
       </div>
     )
@@ -318,7 +318,7 @@ var Navigation = React.createClass({
 
 var StoryList = React.createClass({
 
-  
+    
     render: function() {
         var storyNodes = this.props.items.map(function(item) {
           //console.log(item);
@@ -326,7 +326,7 @@ var StoryList = React.createClass({
           if (item.type === 'TV') {
             storyDetails = item.data.episodes.map(function(ep) {
                 return (
-                  <div className={item.name}><p className="episode" >EP {ep.ep}: <a href={ep.url}>Torrent</a> | No DDL</p></div>
+                  <div className={item.name}><p className="episode" >EP {ep.ep}: <a href={ep.url}>Torrent</a> | <a target="_blank" href={"https://animetosho.org/search?q=s_x "+item.name+" "+ep.ep+ep.v}>DDL</a></p></div>
                 );
               });
             return (
