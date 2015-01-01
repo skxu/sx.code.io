@@ -69,6 +69,7 @@ states = {
         anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10684',
         img:'http://cdn.myanimelist.net/images/anime/6/64615.jpg',
         episodes:[
+          {v:'', ep:'PV', url:'http://www.nyaa.se/?page=download&tid=640745'}
         ]
       },
     },
@@ -324,7 +325,7 @@ var StoryList = React.createClass({
           if (item.type === 'TV') {
             storyDetails = item.data.episodes.map(function(ep) {
                 return (
-                  <div className={item.name}><p className="episode" >EP {ep.ep}: <a href={ep.url}>Torrent</a> | <a target="_blank" href={"https://animetosho.org/search?q=s_x "+item.name+" "+ep.ep+ep.v}>DDL</a></p></div>
+                  <div className={item.name}><p className="episode" >{ep.ep != "PV" ? "EP" : ""} {ep.ep}: <a href={ep.url}>Torrent</a> | <a target="_blank" href={"https://animetosho.org/search?q=s_x "+item.name+" "+ep.ep+ep.v}>DDL</a></p></div>
                 );
               });
             return (
