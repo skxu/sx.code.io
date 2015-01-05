@@ -118,7 +118,7 @@ states = {
       name:'Welcome',
       data:{
         date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015 ٩(･ิᴗ･ิ๑)۶ \n\n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
+        text:'##Happy Holidays\n  \n\n\nWinter 2015  \n\n* Site now loads 90% faster (except for images).  \n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
           },
       
     }
