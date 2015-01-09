@@ -346,8 +346,8 @@ var StoryList = React.createClass({
                         </p>
                         
                         <p className="links">
-                            <a href={item.data.mal}>MyAnimeList</a>&nbsp;|&nbsp;
-                            <a href={item.data.hbird}>Hummingbird</a>&nbsp;|&nbsp;
+                            <a href={item.data.mal}>MyAnimeList</a> | 
+                            <a href={item.data.hbird}>Hummingbird</a> | 
                             <a href={item.data.anidb}>AniDB</a>
                         </p>
               
