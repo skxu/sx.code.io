@@ -47,6 +47,7 @@ states = {
          mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
          anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
+           {v:'', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643362'}
          ]
        },
     },
