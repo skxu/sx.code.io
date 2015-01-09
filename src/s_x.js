@@ -346,8 +346,8 @@ var StoryList = React.createClass({displayName: "StoryList",
                         ), 
                         
                         React.createElement("p", {className: "links"}, 
-                            React.createElement("a", {href: item.data.mal}, "MyAnimeList"), " | ", 
-                            React.createElement("a", {href: item.data.hbird}, "Hummingbird"), " | ", 
+                            React.createElement("a", {href: item.data.mal}, "MyAnimeList"), " |",  
+                            React.createElement("a", {href: item.data.hbird}, "Hummingbird"), " |",  
                             React.createElement("a", {href: item.data.anidb}, "AniDB")
                         ), 
               
