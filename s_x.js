@@ -12,7 +12,8 @@ var banners = [
   {large:'http://i.imgur.com/IbSQfx3.png', small:'http://i.imgur.com/bDR4fuy.png'},
   {large:'http://i.imgur.com/49ZWpmD.png', small:'http://i.imgur.com/YxfSK5H.png'},
   {large:'http://i.imgur.com/SWYoB87.jpg', small:'http://i.imgur.com/ukPrEIJ.png'},
-  {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'}
+  {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'},
+  {large:'http://i.imgur.com/YMsZiyu.jpg', small:'http://i.imgur.com/82GDEH4.jpg'}
   
 ];
 
@@ -47,7 +48,7 @@ states = {
          mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
          anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
-           {v:'', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643362'}
+           {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'}
          ]
        },
     },
