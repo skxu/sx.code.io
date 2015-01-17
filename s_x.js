@@ -40,15 +40,16 @@ states = {
          line1:'Translation by ',
          line2:'Editing by ',
          line3:'OP&ED by ',
-         line1b:'CR+SX',
+         line1b:'CR',
          line2b:'SX',
-         line3b: 'TBA',
+         line3b: 'SX',
          img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
          hbird:'https://hummingbird.me/anime/saenai-heroine-no-sodate-kata',
          mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
          anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
-           {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'}
+           {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'},
+           {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=646123'}
          ]
        },
     },
