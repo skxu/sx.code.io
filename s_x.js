@@ -4,6 +4,7 @@
 var converter = new Showdown.converter();
 
 var releases = [];
+var quotes = [];
 
 var banners = [
   {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
@@ -117,12 +118,20 @@ states = {
   
   Home: [
     {
-      type:'markdown',
+      type:'news',
       name:'Welcome',
-      data:{
-        date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015  \n\n* Site now loads 90% faster (except for images)  \n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
-          },
+      data:[
+         {
+          date:'1-18-15',
+          text:"##Orz\n  \n\n\n2015 January Update  \n\n* We will not be subbing Koufuku Graffiti.   \n* Website still under construction.  \n* Quotes & Rankings coming soon.  \n* Blog updates coming later.  \n\nWe received a few inquiries about recruitment. Your offers to help are all appreciated. Our release cycle isn't exactly streamlined yet, and we don't want to waste your time, so we will be putting everyone on hold for now. If you're willing to cope with beginners or just have some advice for us, just comment on either the blog or torrents and one of us will see it."
+        },
+        {
+          date:'12-21-14',
+          text:'##Happy Holidays\n  \n\n\nWinter 2015  \n\n* We will be subbing Saekano.  \n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
+        }
+       
+            
+           ]
       
     }
   ],
@@ -142,7 +151,7 @@ states = {
       type:'markdown',
       name:'Coming Soon',
       data:{
-        text: '##S\\_X\nS\\_X is a pseudo-fansub group. \n\n* Releases are meant to be fast & watched during the airing season, not high quality archive material.  \n* OP&ED from other groups will be used, if available.  \n<br></br>\n##Q\\_X \nQ\\_X is a subdivision which doesn\'t actually exist yet. While S\\_X provides speed, Q\\_X has the goal of providing better quality.  \n\n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  <br></br>\n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  <br></br>\n\n***Why is your website so shitty?***  \nSomeone had the wonderful idea of building it from scratch.  <br></br>\n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
+        text: '##S\\_X\nS\\_X is a pseudo-fansub group. \n\n* Releases are meant to be fast & watched during the airing season, not high quality archive material.  \n* OP&ED from other groups may be used.  \n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  <br></br>\n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  <br></br>\n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
       }
     }
   ]
@@ -322,6 +331,7 @@ var StoryList = React.createClass({
 
     
     render: function() {
+        var _this = this;
         var storyNodes = this.props.items.map(function(item) {
           //console.log(item);
           var storyDetails;
@@ -332,6 +342,7 @@ var StoryList = React.createClass({
                 );
               });
             return (
+                <tbody>
                 <tr key={item.data.score}>
                     <td>
                         <p className="score">{item.data.rank}</p>
@@ -378,43 +389,76 @@ var StoryList = React.createClass({
               
                     </td>
                 </tr>
+                </tbody>
                 
             );
+        
+        } else if (item.name === 'Welcome') {
+          var quote = {
+            quote:"",
+            author:""
+          };
+          
+          if (quotes.length === 0) {
+            /**Load quotes list */
+            $.getJSON("quotes.json", function(quoteList) {
+              quotes = quoteList;
+              _this.forceUpdate();
+              //$('.releaseList li:gt(3)').hide();
+            });
+          } else {
+            quote = quotes[Math.floor(Math.random()*quotes.length)];
+            
+          }
+          
+          storyDetails = item.data.map(function(item) {
+            var rawMarkup = converter.makeHtml(item.text);
+            return (
+                <div>
+                  <div className="newsArticle" dangerouslySetInnerHTML={{__html: rawMarkup}} />
+                  <div className="lineBreak"/>
+                </div>
+            );
+          });
+          
+          return (
+            <tbody>
+              <tr>
+                <td>
+                  <div className="quoteContainer">
+                  <div className="quote">
+                    {quote.quote}
+                  </div>
+                  <div className="quoteAuthor">
+                    {quote.author}
+                  </div>
+                  </div>
+                </td>
+                
+              </tr>
+              <tr>
+                <td><div className="news">{storyDetails}</div></td>
+              </tr>
+            </tbody>
+
+          );
         
         } else if (item.type === 'markdown') {
           var rawMarkup = converter.makeHtml(item.data.text);
           return (
-            <div>
+            
+            <tbody>
             <tr>
               <td>
                 <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
               </td>
             </tr>
-            </div>
+            </tbody>
+            
           );
   
   
-        } else if (item.type === 'news') {
-          
-          storyDetails = item.data.stories.map(function(story) {
-            var rawMarkup = converter.makeHtml(story.text);
-            return (
-              <tr key={story.date}>
-                <td>
-                    <p>
-                      <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
-                    </p>
-                    <br></br>
-                </td>
-              </tr>
-            );
-          });
-          
-          return (
-            <div>{storyDetails}</div>
-          );
-        
-        }
+        } 
               
     }); //end storynodes
       
@@ -423,9 +467,9 @@ var StoryList = React.createClass({
         return (
             
             <table>
-                <tbody>
+                
                     {storyNodes}
-                </tbody>
+                
             </table>
             
         );
@@ -481,7 +525,6 @@ var App = React.createClass({
               activeNavigationUrl: "home",
               navigationItems: menuItems,
               storyItems: states["Home"],
-              releases: [],
               title: "Home"
           });
         }

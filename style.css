@@ -2,12 +2,12 @@
 
 /* unvisited link */
 a:link {
-    color: #fff;
+    color: #e0e0e0;
 }
 
 /* visited link */
 a:visited {
-    color: #fff;
+    color: #e0e0e0;
 }
 
 .largeBanner {
@@ -24,7 +24,7 @@ a:visited {
 body {
     background-color: #2d2d2d;
     font-family: 'Lato';
-    color: white;
+    color: #e0e0e0;
     font-weight: 300;
     margin-left: 10%;
     margin-right: 10%;
@@ -39,7 +39,7 @@ h1 {
 
 button {
     background-color: #9061b2;
-    color: white;
+    color: #e0e0e0;
     border:0px;
     box-shadow: 0px;
     padding-left:15px;
@@ -74,7 +74,7 @@ button:hover {
   height:35px;
   background: #2d2d2d;
   border-color:#4e5053;
-  color:#fff;
+  color:#e0e0e0;
   padding: 10px;
   border: solid 1px #4e5053;
   transition: box-shadow 0.3s, border 0.3s;
@@ -154,7 +154,7 @@ button:hover {
 }
 
 .navigation a {
-  color: white;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
@@ -177,7 +177,7 @@ button:hover {
 
 .title a {
     text-decoration: none;
-    color: #fff;
+    color: #e0e0e0;
 }
 
 .cover {
@@ -231,9 +231,68 @@ button:hover {
 }
 
 .episode a {
-  color: white
+  color: #e0e0e0;
 }
 
+.lineBreak {
+  margin-top: 20px;
+  border-top: 1px solid #838383;
+}
+
+.news {
+  margin-right: 5%;
+}
+
+.newsArticle {
+  margin-top: 55px;
+}
+
+.quote:before {
+  font-family: Georgia, serif;
+  color: #ccc;
+  content:open-quote;
+  font-size: 5em;
+  line-height: 0em;
+  position: absolute;
+  left: 3px;
+  top: 42px;
+}
+
+
+.quote {
+  #font-family: Copperplate, serif;
+  position: relative;
+  quotes: "\201C""\201D""\2018""\2019";
+  color:#afb3b9;
+  font-style:oblique;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-left: 55px;
+  padding-right: 20px;
+  border-left: 4px solid #80848b;
+  background-color:#3e3e3e;
+}
+
+.quoteAuthor {
+  font-family: Tahoma, serif;
+  display:block;
+  color: #afb3b9;
+  font-size: 12px;
+  padding-top:5px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  border-left: 4px solid #80848b;
+  background-color:#3e3e3e;
+}
+
+.quoteAuthor:before {
+  content: "\2014 \2009";
+  
+}
+
+.quoteContainer {
+  width:70%;
+}
 
 @media screen and (max-width: 750px) { 
     .largeBanner {
@@ -245,8 +304,21 @@ button:hover {
     }
   
     body {
-      margin-left: 0%;
-      margin-right: 0%;
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  
+    .quote {
+      padding-right:10px;
+    }
+  
+    .quoteContainer {
+      width: 85%;
+    }
+  
+    .news {
+      margin-left: 2%;
+      margin-right: 2%;
     }
       
 }
