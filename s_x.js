@@ -199,6 +199,7 @@ var ReleaseList = React.createClass({
   searchInput: function() {
     return React.DOM.input({
       name: 'search',
+      autocomplete:'off',
       className: 'searchBox',
       onChange: this.setSearch,
       placeholder: 'Search (e.g. Trinity Seven 7)'
