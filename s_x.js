@@ -123,7 +123,7 @@ states = {
       data:[
          {
           date:'1-18-15',
-          text:"##Orz\n  \n\n\n2015 January Update  \n\n* We will not be subbing Koufuku Graffiti.   \n* Website still under construction.  \n* Quotes & Rankings coming soon.  \n* Blog updates coming later.  \n\nWe received a few inquiries about recruitment. Your offers to help are all appreciated. Our release cycle isn't exactly streamlined yet, and we don't want to waste your time, so we will be putting everyone on hold for now. If you're willing to cope with beginners or just have some advice for us, just comment on either the blog or torrents and one of us will see it."
+          text:"##Orz\n  \n\n\n2015 January Update  \n\n* We will not be subbing Koufuku Graffiti.   \n* Website still under construction.  \n* Quotes & Rankings coming soon.  \n* Blog updates coming later.  \n\nWe received a few inquiries about recruitment. Your offers to help are all appreciated. Our release cycle isn't exactly streamlined yet, and we don't want to waste your time, so we will be putting everyone on hold for now. If you're willing to cope with beginners or have some advice for us, just comment on either the blog or torrents and one of us will see it."
         },
         {
           date:'12-21-14',
