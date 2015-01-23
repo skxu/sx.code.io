@@ -50,7 +50,8 @@ states = {
          anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
            {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'},
-           {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=646123'}
+           {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=646123'},
+           {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=648244'}
          ]
        },
     },
