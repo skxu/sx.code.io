@@ -4,6 +4,7 @@
 var converter = new Showdown.converter();
 
 var releases = [];
+var quotes = [];
 
 var banners = [
   {large:'http://i.imgur.com/KMdCuLz.png', small:'http://i.imgur.com/NzHFDVJ.png'},
@@ -13,7 +14,10 @@ var banners = [
   {large:'http://i.imgur.com/49ZWpmD.png', small:'http://i.imgur.com/YxfSK5H.png'},
   {large:'http://i.imgur.com/SWYoB87.jpg', small:'http://i.imgur.com/ukPrEIJ.png'},
   {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'},
-  {large:'http://i.imgur.com/YMsZiyu.jpg', small:'http://i.imgur.com/82GDEH4.jpg'}
+  {large:'http://i.imgur.com/YMsZiyu.jpg', small:'http://i.imgur.com/82GDEH4.jpg'},
+  {large:'http://i.imgur.com/yICoKK3.png', small:'http://i.imgur.com/htS6uyJ.png'},
+  {large:'http://i.imgur.com/205duzD.png', small:'http://i.imgur.com/voM9Fyp.png'},
+  {large:'http://i.imgur.com/H0cNbCc.jpg', small:'http://i.imgur.com/nga3Bt6.png'}
   
 ];
 
@@ -40,15 +44,17 @@ states = {
          line1:'Translation by ',
          line2:'Editing by ',
          line3:'OP&ED by ',
-         line1b:'CR+SX',
+         line1b:'CR',
          line2b:'SX',
-         line3b: 'TBA',
+         line3b: 'SX',
          img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
          hbird:'https://hummingbird.me/anime/saenai-heroine-no-sodate-kata',
          mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
          anidb:'http://anidb.net/perl-bin/animedb.pl?show=anime&aid=10538',
          episodes:[
-           {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'}
+           {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'},
+           {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=646123'},
+           {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=648244'}
          ]
        },
     },
@@ -116,12 +122,24 @@ states = {
   
   Home: [
     {
-      type:'markdown',
+      type:'news',
       name:'Welcome',
-      data:{
-        date:'12-21-14',
-        text:'##Happy Holidays\n  \n\n\nWinter 2015  \n\n* Site now loads 90% faster (except for images)  \n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
-          },
+      data:[
+        {
+          date:'1-26-15',
+          text:"##Banners Update\n  \n\n\nFull gallery available [here](http://imgur.com/a/AUert)."
+        },
+        {
+          date:'1-18-15',
+          text:"##Orz\n  \n\n\n2015 January Update  \n\n* We will not be subbing Koufuku Graffiti.   \n* Website still under construction.  \n* Quotes & Rankings coming soon.  \n* Blog updates coming later.  \n\nWe received a few inquiries about recruitment. Your offers to help are all appreciated. Our release cycle isn't exactly streamlined yet, and we don't want to waste your time, so we will be putting everyone on hold for now. If you're willing to cope with beginners or have some advice for us, just comment on either the blog or torrents and one of us will see it."
+        },
+        {
+          date:'12-21-14',
+          text:'##Happy Holidays\n  \n\n\nWinter 2015  \n\n* We will be subbing Saekano.  \n* Banners have arrived!  \n* Direct download links are now available thanks to Anime Tosho.'
+        }
+       
+            
+           ]
       
     }
   ],
@@ -141,7 +159,7 @@ states = {
       type:'markdown',
       name:'Coming Soon',
       data:{
-        text: '##S\\_X\nS\\_X is a pseudo-fansub group. \n\n* Releases are meant to be fast & watched during the airing season, not high quality archive material.  \n* OP&ED from other groups will be used, if available.  \n<br></br>\n##Q\\_X \nQ\\_X is a subdivision which doesn\'t actually exist yet. While S\\_X provides speed, Q\\_X has the goal of providing better quality.  \n\n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  <br></br>\n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  <br></br>\n\n***Why is your website so shitty?***  \nSomeone had the wonderful idea of building it from scratch.  <br></br>\n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
+        text: '##S\\_X\nS\\_X is a pseudo-fansub group. \n\n* Releases are meant to be fast & watched during the airing season, not high quality archive material.  \n* OP&ED from other groups may be used.  \n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  <br></br>\n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  <br></br>\n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
       }
     }
   ]
@@ -154,7 +172,7 @@ var ReleaseListItem = React.createClass({displayName: "ReleaseListItem",
   render: function() {
     return (
       React.createElement("div", null, 
-      this.props.hidden ? null : React.createElement("li", {className: "releaseName"}, this.props.release.name, React.createElement("div", {className: "normalCase"}, "720p - ", React.createElement("a", {className: "download_720p", href: this.props.release.url}, "Torrent"), React.createElement("a", {target: "_blank", className: "download_720p", href: this.props.release.ddl}, "DDL")))
+      this.props.hidden ? null : React.createElement("li", {className: "releaseName"}, this.props.release.nameList[0], React.createElement("div", {className: "normalCase"}, "720p - ", React.createElement("a", {className: "download_720p", href: this.props.release.url}, "Torrent"), React.createElement("a", {target: "_blank", className: "download_720p", href: this.props.release.ddl}, "DDL")))
       
       )
     )
@@ -179,9 +197,18 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
   releases: function() {
     return this.props.releases.filter((function(_this) {
       return function(release) {
-        name1 = release.name.toLowerCase();
-        name2 = release.alt.toLowerCase();
-        return ((name1.indexOf(_this.state.search.toLowerCase()) > -1) || (name2.indexOf(_this.state.search.toLowerCase()) > -1));
+        nameList = release.nameList;
+        console.log(nameList);
+        found = false;
+        for (i in nameList) {
+          name = nameList[i];
+          console.log(name.toLowerCase());
+          if (name.toLowerCase().indexOf(_this.state.search.toLowerCase()) > -1) {
+            found = true;
+            break;
+          }
+        }
+        return found;
       };
     })(this));
   },
@@ -189,9 +216,10 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
   searchInput: function() {
     return React.DOM.input({
       name: 'search',
+      autocomplete:'off',
       className: 'searchBox',
       onChange: this.setSearch,
-      placeholder: 'Search (e.g. Trinity Seven 7)'
+      placeholder: 'Search (e.g. Trinity Seven 9)'
     });
   },
   
@@ -207,7 +235,7 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
           if (release === undefined) continue;
           _results.push(ReleaseListItem({
             release: release,
-            hidden: _results.length >= 3 && this.state.hide
+            hidden: ((_results.length >= 3 && this.state.hide) || (_results.length > 10))
           }));
         }
         if (_results.length > 3) {
@@ -242,7 +270,7 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
   showButton: function() {
     return (
       React.createElement("div", null, 
-        React.createElement("button", {className: "showAll", onClick: this.onClick}, this.state.hide ? "Show All" : "Show Less")
+        React.createElement("button", {className: "showAll", onClick: this.onClick}, this.state.hide ? "Show More" : "Show Less")
       )
     )
   },
@@ -321,6 +349,7 @@ var StoryList = React.createClass({displayName: "StoryList",
 
     
     render: function() {
+        var _this = this;
         var storyNodes = this.props.items.map(function(item) {
           //console.log(item);
           var storyDetails;
@@ -331,6 +360,7 @@ var StoryList = React.createClass({displayName: "StoryList",
                 );
               });
             return (
+                React.createElement("tbody", null, 
                 React.createElement("tr", {key: item.data.score}, 
                     React.createElement("td", null, 
                         React.createElement("p", {className: "score"}, item.data.rank)
@@ -377,43 +407,76 @@ var StoryList = React.createClass({displayName: "StoryList",
               
                     )
                 )
+                )
                 
             );
+        
+        } else if (item.name === 'Welcome') {
+          var quote = {
+            quote:"",
+            author:""
+          };
+          
+          if (quotes.length === 0) {
+            /**Load quotes list */
+            $.getJSON("quotes.json", function(quoteList) {
+              quotes = quoteList;
+              _this.forceUpdate();
+              //$('.releaseList li:gt(3)').hide();
+            });
+          } else {
+            quote = quotes[Math.floor(Math.random()*quotes.length)];
+            
+          }
+          
+          storyDetails = item.data.map(function(item) {
+            var rawMarkup = converter.makeHtml(item.text);
+            return (
+                React.createElement("div", null, 
+                  React.createElement("div", {className: "newsArticle", dangerouslySetInnerHTML: {__html: rawMarkup}}), 
+                  React.createElement("div", {className: "lineBreak"})
+                )
+            );
+          });
+          
+          return (
+            React.createElement("tbody", null, 
+              React.createElement("tr", null, 
+                React.createElement("td", null, 
+                  React.createElement("div", {className: "quoteContainer"}, 
+                  React.createElement("div", {className: "quote"}, 
+                    quote.quote
+                  ), 
+                  React.createElement("div", {className: "quoteAuthor"}, 
+                    quote.author
+                  )
+                  )
+                )
+                
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("td", null, React.createElement("div", {className: "news"}, storyDetails))
+              )
+            )
+
+          );
         
         } else if (item.type === 'markdown') {
           var rawMarkup = converter.makeHtml(item.data.text);
           return (
-            React.createElement("div", null, 
+            
+            React.createElement("tbody", null, 
             React.createElement("tr", null, 
               React.createElement("td", null, 
                 React.createElement("div", {dangerouslySetInnerHTML: {__html: rawMarkup}})
               )
             )
             )
+            
           );
   
   
-        } else if (item.type === 'news') {
-          
-          storyDetails = item.data.stories.map(function(story) {
-            var rawMarkup = converter.makeHtml(story.text);
-            return (
-              React.createElement("tr", {key: story.date}, 
-                React.createElement("td", null, 
-                    React.createElement("p", null, 
-                      React.createElement("div", {dangerouslySetInnerHTML: {__html: rawMarkup}})
-                    ), 
-                    React.createElement("br", null)
-                )
-              )
-            );
-          });
-          
-          return (
-            React.createElement("div", null, storyDetails)
-          );
-        
-        }
+        } 
               
     }); //end storynodes
       
@@ -422,9 +485,9 @@ var StoryList = React.createClass({displayName: "StoryList",
         return (
             
             React.createElement("table", null, 
-                React.createElement("tbody", null, 
+                
                     storyNodes
-                )
+                
             )
             
         );
@@ -480,7 +543,6 @@ var App = React.createClass({displayName: "App",
               activeNavigationUrl: "home",
               navigationItems: menuItems,
               storyItems: states["Home"],
-              releases: [],
               title: "Home"
           });
         }
