@@ -172,7 +172,7 @@ var ReleaseListItem = React.createClass({
   render: function() {
     return (
       <div>
-      {this.props.hidden ? null : <li className="releaseName">{this.props.release.name}<div className="normalCase">720p - <a className="download_720p" href={this.props.release.url}>Torrent</a><a target="_blank" className="download_720p" href={this.props.release.ddl}>DDL</a></div></li>
+      {this.props.hidden ? null : <li className="releaseName">{this.props.release.nameList[0]}<div className="normalCase">720p - <a className="download_720p" href={this.props.release.url}>Torrent</a><a target="_blank" className="download_720p" href={this.props.release.ddl}>DDL</a></div></li>
       }
       </div>
     )
@@ -197,9 +197,18 @@ var ReleaseList = React.createClass({
   releases: function() {
     return this.props.releases.filter((function(_this) {
       return function(release) {
-        name1 = release.name.toLowerCase();
-        name2 = release.alt.toLowerCase();
-        return ((name1.indexOf(_this.state.search.toLowerCase()) > -1) || (name2.indexOf(_this.state.search.toLowerCase()) > -1));
+        nameList = release.nameList;
+        console.log(nameList);
+        found = false;
+        for (i in nameList) {
+          name = nameList[i];
+          console.log(name.toLowerCase());
+          if (name.toLowerCase().indexOf(_this.state.search.toLowerCase()) > -1) {
+            found = true;
+            break;
+          }
+        }
+        return found;
       };
     })(this));
   },
@@ -210,7 +219,7 @@ var ReleaseList = React.createClass({
       autocomplete:'off',
       className: 'searchBox',
       onChange: this.setSearch,
-      placeholder: 'Search (e.g. Trinity Seven 7)'
+      placeholder: 'Search (e.g. Trinity Seven 9)'
     });
   },
   
@@ -226,7 +235,7 @@ var ReleaseList = React.createClass({
           if (release === undefined) continue;
           _results.push(ReleaseListItem({
             release: release,
-            hidden: _results.length >= 3 && this.state.hide
+            hidden: ((_results.length >= 3 && this.state.hide) || (_results.length > 10))
           }));
         }
         if (_results.length > 3) {
@@ -261,7 +270,7 @@ var ReleaseList = React.createClass({
   showButton: function() {
     return (
       <div>
-        <button className="showAll" onClick={this.onClick}>{this.state.hide ? "Show All" : "Show Less"}</button>
+        <button className="showAll" onClick={this.onClick}>{this.state.hide ? "Show More" : "Show Less"}</button>
       </div>
     )
   },

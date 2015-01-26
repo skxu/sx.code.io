@@ -3,98 +3,160 @@
   "releases":
   [    
     {
-      "name":"Trinity Seven 01",
-      "alt":"Trinity Seven 1",
+      "nameList":
+      [
+        "Trinity Seven 01",
+        "Trinity Seven 1",
+        "Trinity 1"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=607588",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_01-720p-5506a0cd-mkv.823460"
     },
     {
-      "name":"Trinity Seven 02",
-      "alt":"Trinity Seven 2",
+      "nameList":
+      [
+        "Trinity Seven 02",
+        "Trinity Seven 2",
+        "Trinity 2"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=609598",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_02-720p-593df48b-mkv.824800"
     },
     {
-      "name":"Trinity Seven 03",
-      "alt":"Trinity Seven 3",
+      "nameList":
+      [
+        "Trinity Seven 03",
+        "Trinity Seven 3",
+        "Trinity 3"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=612961",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_03-720p-b84a1643-mkv.827145"
     },
     {
-      "name":"Trinity Seven 04",
-      "alt":"Trinity Seven 4",
+      "nameList":
+      [
+        "Trinity Seven 04",
+        "Trinity Seven 4",
+        "Trinity 4"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=607588",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_04v2-720p-b7a49ca5-mkv.833965"
     },
     {
-      "name":"Trinity Seven 05",
-      "alt":"Trinity Seven 5",
+      "nameList":
+      [
+        "Trinity Seven 05",
+        "Trinity Seven 5",
+        "Trinity 5"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=622443",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_05v2-720p-61e086f9-mkv.833963"
     },
     {
-      "name":"Trinity Seven 06",
-      "alt":"Trinity Seven 6",
+      "nameList":
+      [
+        "Trinity Seven 06",
+        "Trinity Seven 6",
+        "Trinity 6"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=622437",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_06v2-720p-20b306d9-mkv.833962"
     },
     {
-      "name":"Trinity Seven 07",
-      "alt":"Trinity Seven 7",
+      "nameList":
+      [
+        "Trinity Seven 07",
+        "Trinity Seven 7",
+        "Trinity 7"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=625875",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_07v2-720p-f9cf3f26-mkv.836856"
     },
     {
-      "name":"Trinity Seven 08",
-      "alt":"Trinity Seven 8",
+      "nameList":
+      [
+        "Trinity Seven 08",
+        "Trinity Seven 8",
+        "Trinity 8"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=627469",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_08-720p-a320f9ea-mkv.838060"
     },
     {
-      "name":"Trinity Seven 09",
-      "alt":"Trinity Seven 9",
+      "nameList":
+      [
+        "Trinity Seven 09",
+        "Trinity Seven 9",
+        "Trinity 9"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=630161",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_09-720p-347737b5-mkv.839994"
     },
     {
-      "name":"Trinity Seven 10",
-      "alt":"Trinity Seven 10",
+      "nameList":
+      [
+        "Trinity Seven 10",
+        "Trinity Seven 10"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=632853",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_10-720p-c227f953-mkv.842061"
     },
     {
-      "name":"Trinity Seven 11",
-      "alt":"Trinity Seven 11",
+      "nameList":
+      [
+        "Trinity Seven 11",
+        "Trinity Seven 11"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=635424",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_11-720p-3570a24d-mkv.844026"
     },
     {
-      "name":"Trinity Seven 12",
-      "alt":"Trinity Seven 12",
+      "nameList":
+      [
+        "Trinity Seven 12",
+        "Trinity Seven 12"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=637883",
       "ddl":"https://animetosho.org/view/s_x-trinity_seven_12-720p-e19a5905-mkv.846336"
     },
     {
-      "name":"Koufuku PV",
-      "alt":"Koufuku Graffiti PV",
+      "nameList":
+      [
+        "Koufuku PV",
+        "Koufuku Graffiti PV"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=640745",
       "ddl":"https://animetosho.org/view/s_x-koufuku_graffiti_pv-mkv.848665"
     },
     {
-      "name":"Saekano 00",
-      "alt":"Saenai Heroine No Sodatekata 00v2",
+      "nameList":
+      [
+        "Saekano 00",
+        "Saenai Heroine No Sodatekata 00v2",
+        "Saenai Heroine No Sodatekata 00"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=643627",
       "ddl":"https://animetosho.org/view/s_x-saenai_heroine_no_sodatekata_00v2-720p-b1f74b9c-mkv.851101"
     },
     {
-      "name":"Saekano 01",
-      "alt":"Saenai Heroine No Sodatekata 01",
+      "nameList":
+      [
+        "Saekano 01",
+        "Saenai Heroine No Sodatekata 01",
+        "Saenai Heroine No Sodatekata 1",
+        "Saekano 1"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=646123",
       "ddl":"https://animetosho.org/view/s_x-saenai_heroine_no_sodatekata_01-720p-97f401c2-mkv.853129"
     },
     {
-      "name":"Saekano 02",
-      "alt":"Saenai Heroine No Sodatekata 02",
+      "nameList":
+      [
+        "Saekano 02",
+        "Saenai Heroine No Sodatekata 02",
+        "Saenai Heroine No Sodatekata 2",
+        "Saekano 2"
+      ],
       "url":"http://www.nyaa.se/?page=download&tid=648244",
       "ddl":"https://animetosho.org/view/s_x-saenai_heroine_no_sodatekata_02-720p-c44012d5-mkv.854995"
     }
