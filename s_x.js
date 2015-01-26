@@ -14,7 +14,10 @@ var banners = [
   {large:'http://i.imgur.com/49ZWpmD.png', small:'http://i.imgur.com/YxfSK5H.png'},
   {large:'http://i.imgur.com/SWYoB87.jpg', small:'http://i.imgur.com/ukPrEIJ.png'},
   {large:'http://i.imgur.com/HcKCzZM.png', small:'http://i.imgur.com/iu83kR0.png'},
-  {large:'http://i.imgur.com/YMsZiyu.jpg', small:'http://i.imgur.com/82GDEH4.jpg'}
+  {large:'http://i.imgur.com/YMsZiyu.jpg', small:'http://i.imgur.com/82GDEH4.jpg'},
+  {large:'http://i.imgur.com/yICoKK3.png', small:'http://i.imgur.com/htS6uyJ.png'},
+  {large:'http://i.imgur.com/205duzD.png', small:'http://i.imgur.com/voM9Fyp.png'},
+  {large:'http://i.imgur.com/H0cNbCc.jpg', small:'http://i.imgur.com/nga3Bt6.png'}
   
 ];
 
