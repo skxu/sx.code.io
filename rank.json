@@ -1,0 +1,118 @@
+[
+  {
+    "season":"Winter 2015",
+    "name":"Death Parade",
+    "type":"new",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":9,
+        "note":"awesome first episode, can't wait for more"
+      },
+      {
+        "ep":"02",
+        "score":8,
+        "note":"love the unique character designs, pacing slowed down a bit but explanations provided"
+      },
+      {
+        "ep":"03",
+        "score":7.5,
+        "note":""
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"Rolling Girls",
+    "type":"new",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":6.5,
+        "note":"what's going on?"
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"Saekano",
+    "type":"new",
+    "episodes": [
+      {
+        "ep":"00",
+        "score":6,
+        "note":"only saving grace is Kato's voice actor"
+      },
+      {
+        "ep":"01",
+        "score":5,
+        "note":""
+      },
+      {
+        "ep":"02",
+        "score":5.5,
+        "note":""
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"Koufuku",
+    "type":"new",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":6.5,
+        "note":""
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"Junketsu",
+    "type":"new",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":6.5,
+        "note":"I like Maria's character design"
+      },
+      {
+        "ep":"02",
+        "score":6,
+        "note":"Not a fan of the angel design"
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"DRRRx2",
+    "type":"sequel",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":6.5,
+        "note":"The first DRRR started out slow too"
+      }
+    ]
+  },
+  
+  {
+    "season":"Winter 2015",
+    "name":"Aldnoah Zero",
+    "type":"sequel",
+    "episodes": [
+      {
+        "ep":"01",
+        "score":3,
+        "note":"Ruined a great ending from S1, will wait until S2 ends before continuing"
+      }
+    ]
+  }
+  
+]

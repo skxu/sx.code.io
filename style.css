@@ -28,6 +28,11 @@ body {
     font-weight: 300;
     margin-left: 10%;
     margin-right: 10%;
+    height: 100%;
+}
+
+html {
+  height: 100% auto;
 }
 
 h1 {
@@ -96,6 +101,11 @@ button:hover {
 .releaseName {
   cursor:default;
 }
+
+.releaseList {
+  margin-bottom: 15px;
+}
+
 
 .normalCase{
   text-transform:capitalize;
@@ -293,6 +303,37 @@ button:hover {
 .quoteContainer {
   width:70%;
 }
+
+.contentContainer {
+  overflow:auto;
+  height:auto;
+}
+
+.footContainer {
+  position: relative;
+  bottom: 0px;
+  margin-top:20px;
+
+}
+
+footer {
+  padding-top: 0.5em;
+  border-top: 1px solid #333;
+  margin-top: 15em;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 12px;
+  color:#575757;
+  position: relative;
+  bottom: 0px;
+}
+
+footer a, footer a:visited, footer a:active, footer a:link {
+  color:#575747;
+  padding:0.5em;
+}
+
+
 
 @media screen and (max-width: 750px) { 
     .largeBanner {
