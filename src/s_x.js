@@ -3,7 +3,6 @@
 /**Markdown to html converter */
 var converter = new Showdown.converter();
 
-var releases = [];
 var quotes = [];
 
 var banners = [
@@ -157,7 +156,7 @@ states = {
   About: [
     {
       type:'markdown',
-      name:'Coming Soon',
+      name:'About',
       data:{
         text: '##S\\_X\nS\\_X is a pseudo-fansub group. \n\n* Releases are meant to be fast & watched during the airing season, not high quality archive material.  \n* OP&ED from other groups may be used.  \n<br></br>\n##Website \nWe don\'t like Wordpress so our site is a bit different. You can view the source code [here](https://github.com/skxu/sx.code.io).  \n  \n<u>**Hosting**</u>: DigitalOcean ($60/yr)  \n<u>**Domain**</u>: nic.io ($60/yr)  \n<u>**Webserver**</u>: Nginx  \n<u>**Site**</u>:ReactJS  \n<u>**Blog**</u>:Ghost  \n\n<br></br>\n##FAQ \n***Why do you steal other groups\' kfx?***  \nThe goal of S_X is and has always been to release fast. We don\'t have time or manpower to do kfx. Also, we always give credit to the other groups.  <br></br>\n\n***Why do your subs suck?***  \nWe\'re new & learning. Criticism is greatly appreciated since it\'s not always easy seeing your own faults.  <br></br>\n\n***There are so many fansub groups out there already. Why bother?***  \n We\'re doing this for ourselves. Also, half the groups take too long to release or just quit mid-season.  \n\n<br></br><br></br><!--lol brbrbrbr-->'
       }
@@ -171,7 +170,7 @@ states = {
 var ReleaseListItem = React.createClass({displayName: "ReleaseListItem",
   render: function() {
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {key: this.props.release.url}, 
       this.props.hidden ? null : React.createElement("li", {className: "releaseName"}, this.props.release.nameList[0], React.createElement("div", {className: "normalCase"}, "720p - ", React.createElement("a", {className: "download_720p", href: this.props.release.url}, "Torrent"), React.createElement("a", {target: "_blank", className: "download_720p", href: this.props.release.ddl}, "DDL")))
       
       )
@@ -198,11 +197,9 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
     return this.props.releases.filter((function(_this) {
       return function(release) {
         nameList = release.nameList;
-        console.log(nameList);
         found = false;
         for (i in nameList) {
           name = nameList[i];
-          console.log(name.toLowerCase());
           if (name.toLowerCase().indexOf(_this.state.search.toLowerCase()) > -1) {
             found = true;
             break;
@@ -264,7 +261,6 @@ var ReleaseList = React.createClass({displayName: "ReleaseList",
     this.setState({
       search: this.state.search,
       hide:set});
-    this.forceUpdate();
   },
   
   showButton: function() {
@@ -301,6 +297,28 @@ var NavigationItem = React.createClass({displayName: "NavigationItem",
 });
 
 var Navigation = React.createClass({displayName: "Navigation",
+  
+    getInitialState: function() {
+      return {
+        releases: [],
+      };
+    },
+  
+    componentDidMount: function() {
+
+          /**Load release list
+           */
+          $.getJSON("releases.json", function(releaseList) {
+            if (this.isMounted()) {
+              this.setState({
+                releases: releaseList[0].releases
+              });
+            }
+
+          }.bind(this));
+    },
+      
+  
     setSelectedItem: function(item) {
         this.props.itemSelected(item);
     },
@@ -315,16 +333,7 @@ var Navigation = React.createClass({displayName: "Navigation",
             );
         });
       
-        if (releases.length === 0) {
-          /**Load release list
-             In the future, all data should be loaded
-           */
-          $.getJSON("releases.json", function(releaseList) {
-            releases = releaseList[0].releases;
-            _this.forceUpdate();
-            $('.releaseList li:gt(3)').hide();
-          });
-        }
+        
 
         return (
             React.createElement("div", {className: "navigation"}, 
@@ -334,7 +343,7 @@ var Navigation = React.createClass({displayName: "Navigation",
                 ), 
                 React.createElement("div", {className: "search"}, 
                   React.createElement("ul", {className: "releaseList"}, 
-                    React.createElement(ReleaseList, {releases: releases})
+                    React.createElement(ReleaseList, {releases: this.state.releases})
                   )
                 )
                 
@@ -345,9 +354,27 @@ var Navigation = React.createClass({displayName: "Navigation",
     }
 });
 
+
+var Footer = React.createClass({displayName: "Footer",
+  render: function() {
+    return (
+      React.createElement("footer", null, 
+         "SX Subs", 
+         React.createElement("a", {href: "http://imgur.com/a/AUert"}, "Banners"), 
+         React.createElement("a", {href: "https://github.com/skxu/sx.code.io"}, "Source"), 
+         React.createElement("a", {href: "rank.html"}, "Rankings"), 
+         React.createElement("a", {href: "http://www.nyaa.se/?page=separate&user=281514"}, "Torrents")
+      )
+    
+    );
+  
+  }
+});
+                            
+
+
 var StoryList = React.createClass({displayName: "StoryList",
 
-    
     render: function() {
         var _this = this;
         var storyNodes = this.props.items.map(function(item) {
@@ -550,16 +577,21 @@ var App = React.createClass({displayName: "App",
     render: function() {
         var banner = banners[Math.floor(Math.random()*banners.length)];
         return (
-            React.createElement("div", null, 
-                React.createElement("img", {className: "largeBanner", src: banner.large, onload: "this.style.display='block'"}), 
-                React.createElement("img", {className: "smallBanner", src: banner.small}), 
-                React.createElement(Navigation, {activeUrl: this.state.activeNavigationUrl, 
-                    items: this.state.navigationItems, 
-                    itemSelected: this.setSelectedItem}), 
-                React.createElement("h1", null, this.state.title), 
-                React.createElement(StoryList, {items: this.state.storyItems})
-          
+            React.createElement("div", {className: "pseudoBody"}, 
+                React.createElement("div", {className: "contentContainer"}, 
+                  React.createElement("img", {className: "largeBanner", src: banner.large, onload: "this.style.display='block'"}), 
+                  React.createElement("img", {className: "smallBanner", src: banner.small}), 
+                  React.createElement(Navigation, {activeUrl: this.state.activeNavigationUrl, 
+                      items: this.state.navigationItems, 
+                      itemSelected: this.setSelectedItem}), 
+                  React.createElement("h1", null, this.state.title), 
+                  React.createElement(StoryList, {items: this.state.storyItems})
+                ), 
+                React.createElement("div", {className: "footContainer"}, 
+                  React.createElement(Footer, null)
+                )
             )
+          
         );
     },
     setSelectedItem: function(item) {
