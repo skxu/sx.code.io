@@ -45,7 +45,7 @@ states = {
          line3:'OP&ED by ',
          line1b:'CR',
          line2b:'SX',
-         line3b: 'SX',
+         line3b: 'SX+SS',
          img:'http://cdn.myanimelist.net/images/anime/7/68783.jpg',
          hbird:'https://hummingbird.me/anime/saenai-heroine-no-sodate-kata',
          mal:'http://myanimelist.net/anime/23277/Saenai_Heroine_no_Sodatekata',
@@ -53,7 +53,8 @@ states = {
          episodes:[
            {v:'v2', ep:'00', url:'http://www.nyaa.se/?page=download&tid=643627'},
            {v:'',   ep:'01', url:'http://www.nyaa.se/?page=download&tid=646123'},
-           {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=648244'}
+           {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=648244'},
+           {v:'',   ep:'03', url:'http://www.nyaa.se/?page=download&tid=650774'}
          ]
        },
     },
@@ -61,7 +62,7 @@ states = {
     {
       name:'Koufuku Graffiti',
       type: 'TV',
-      status: 'ongoing',
+      status: 'cancelled',
       data:{
         score:3, //unique ID #
         rank:2, //used for displaying
