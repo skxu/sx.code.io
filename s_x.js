@@ -126,6 +126,10 @@ states = {
       name:'Welcome',
       data:[
         {
+          date:'2-01-15',
+          text:'Staff page will be retired in the near future.'
+        },
+        {
           date:'1-26-15',
           text:"##Banners Update\n  \n\n\nFull gallery available [here](http://imgur.com/a/AUert)."
         },
@@ -147,9 +151,9 @@ states = {
   Staff: [
     {
       type:'markdown',
-      name:'Coming Soon',
+      name:'Staff',
       data:{
-        text: 'Hm?  \n <img src="http://i.imgur.com/K9YJnLl.png" alt="Drawing" style="width: 50%;"/>'
+        text:"##News\n\nThis page will eventually be replaced with rankings!"
       }
     }
   ],
@@ -375,6 +379,25 @@ var Footer = React.createClass({
 
 
 var StoryList = React.createClass({
+  
+    getInitialState: function() {
+      return {
+        quotes: [{'quote':'','author':''}],
+        randomIndex:0
+      };
+    },
+  
+    componentDidMount: function() {
+      $.getJSON("quotes.json", function(quoteList) {
+        if (this.isMounted()) {
+          this.setState({
+            quotes: quoteList,
+            randomIndex: Math.floor(Math.random()*quoteList.length)
+          });
+        }
+      }.bind(this));
+    
+    },
 
     render: function() {
         var _this = this;
@@ -440,22 +463,10 @@ var StoryList = React.createClass({
             );
         
         } else if (item.name === 'Welcome') {
-          var quote = {
-            quote:"",
-            author:""
-          };
+                
           
-          if (quotes.length === 0) {
-            /**Load quotes list */
-            $.getJSON("quotes.json", function(quoteList) {
-              quotes = quoteList;
-              _this.forceUpdate();
-              //$('.releaseList li:gt(3)').hide();
-            });
-          } else {
-            quote = quotes[Math.floor(Math.random()*quotes.length)];
-            
-          }
+          
+          _this.state.randomIndex = Math.floor(Math.random()*_this.state.quotes.length);
           
           storyDetails = item.data.map(function(item) {
             var rawMarkup = converter.makeHtml(item.text);
@@ -473,10 +484,10 @@ var StoryList = React.createClass({
                 <td>
                   <div className="quoteContainer">
                   <div className="quote">
-                    {quote.quote}
+                    {_this.state.quotes[_this.state.randomIndex].quote}
                   </div>
                   <div className="quoteAuthor">
-                    {quote.author}
+                    {_this.state.quotes[_this.state.randomIndex].author}
                   </div>
                   </div>
                 </td>
@@ -513,9 +524,7 @@ var StoryList = React.createClass({
         return (
             
             <table>
-                
                     {storyNodes}
-                
             </table>
             
         );
@@ -557,14 +566,14 @@ var App = React.createClass({
             activeNavigationUrl: "completed",
             navigationItems: menuItems,
             storyItems: states["Completed"],
-            title: "Completed",
+            title: "Completed"
           });
         } else if (window.location.hash === "#Staff") {
           return ({
             activeNavigationUrl: "staff",
             navigationItems: menuItems,
             storyItems: states["Staff"],
-            title: "Staff",
+            title: "Staff"
           });
         } else {
           return ({
