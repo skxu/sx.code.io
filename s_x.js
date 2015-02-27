@@ -56,7 +56,9 @@ states = {
            {v:'',   ep:'02', url:'http://www.nyaa.se/?page=download&tid=648244'},
            {v:'',   ep:'03', url:'http://www.nyaa.se/?page=download&tid=650774'},
            {v:'',   ep:'04', url:'http://www.nyaa.se/?page=download&tid=653603'},
-           {v:'',   ep:'05', url:'http://www.nyaa.se/?page=download&tid=655989'}
+           {v:'',   ep:'05', url:'http://www.nyaa.se/?page=download&tid=655989'},
+           {v:'',   ep:'06', url:'http://www.nyaa.se/?page=download&tid=658146'},
+           {v:'',   ep:'07', url:'http://www.nyaa.se/?page=download&tid=660444'}
          ]
        },
     },
